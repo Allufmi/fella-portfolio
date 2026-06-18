@@ -1,0 +1,3066 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark" data-lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fella MOUSSAOUI — Big Data Analyst & Business Intelligence Engineer. Portfolio professionnel spécialisé en Data Analytics, Power BI, Python, SQL." />
+  <meta name="keywords" content="Big Data Analyst, Business Intelligence, Power BI, Python, SQL, Data Science, Algérie, Portfolio" />
+  <meta name="author" content="Fella MOUSSAOUI" />
+  <meta property="og:title" content="Fella MOUSSAOUI — Big Data Analyst" />
+  <meta property="og:description" content="Ingénieure en informatique spécialisée en Big Data Analytics. Transformons les données en décisions stratégiques." />
+  <meta property="og:type" content="website" />
+  <title>Fella MOUSSAOUI — Big Data Analyst</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    /* ============================================
+       CSS CUSTOM PROPERTIES — TOKEN SYSTEM
+    ============================================ */
+    :root {
+      /* Dark theme (default) */
+      --bg-primary: #0D0D1A;
+      --bg-secondary: #12121F;
+      --bg-card: #1A1A2E;
+      --bg-card-hover: #1F1F38;
+      --bg-glass: rgba(124, 58, 237, 0.06);
+
+      --violet-core: #7C3AED;
+      --violet-light: #A78BFA;
+      --violet-pale: #EDE9FE;
+      --violet-glow: rgba(124, 58, 237, 0.3);
+
+      --text-primary: #F8F8FF;
+      --text-secondary: #A9A9C8;
+      --text-muted: #6B6B8A;
+      --text-accent: #A78BFA;
+
+      --border: rgba(124, 58, 237, 0.2);
+      --border-light: rgba(255,255,255,0.06);
+
+      --gradient-hero: linear-gradient(135deg, #0D0D1A 0%, #1A0A2E 50%, #0D0D1A 100%);
+      --gradient-card: linear-gradient(135deg, #1A1A2E, #12121F);
+      --gradient-accent: linear-gradient(135deg, #7C3AED, #A78BFA);
+      --gradient-text: linear-gradient(135deg, #A78BFA, #7C3AED);
+
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+      --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.15);
+      --shadow-hover: 0 8px 40px rgba(124, 58, 237, 0.25);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 32px;
+
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #FAFAFA;
+      --bg-secondary: #F4F4F8;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F8F6FF;
+      --bg-glass: rgba(124, 58, 237, 0.04);
+
+      --text-primary: #0D0D1A;
+      --text-secondary: #4A4A6A;
+      --text-muted: #8A8AAA;
+      --text-accent: #7C3AED;
+
+      --border: rgba(124, 58, 237, 0.15);
+      --border-light: rgba(0,0,0,0.06);
+
+      --gradient-hero: linear-gradient(135deg, #FAFAFA 0%, #F0EAFF 50%, #FAFAFA 100%);
+      --gradient-card: linear-gradient(135deg, #FFFFFF, #F8F6FF);
+
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.08);
+      --shadow-hover: 0 8px 40px rgba(124, 58, 237, 0.15);
+    }
+
+    /* ============================================
+       RESET & BASE
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--violet-core); border-radius: 3px; }
+
+    /* Selection */
+    ::selection { background: var(--violet-core); color: #fff; }
+
+    /* ============================================
+       TYPOGRAPHY
+    ============================================ */
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .display-xl { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -0.02em; }
+    .display-lg { font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: -0.02em; }
+    .display-md { font-size: clamp(1.4rem, 3vw, 2rem); }
+
+    .gradient-text {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* ============================================
+       LAYOUT UTILITIES
+    ============================================ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 100px 0; }
+    .section-sm { padding: 60px 0; }
+
+    .flex { display: flex; }
+    .flex-center { display: flex; align-items: center; justify-content: center; }
+    .flex-between { display: flex; align-items: center; justify-content: space-between; }
+    .flex-col { display: flex; flex-direction: column; }
+    .gap-sm { gap: 12px; }
+    .gap-md { gap: 24px; }
+    .gap-lg { gap: 40px; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+
+    /* ============================================
+       SECTION HEADERS
+    ============================================ */
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--violet-light);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gradient-accent);
+      border-radius: 2px;
+      margin: 20px auto 0;
+    }
+
+    /* ============================================
+       CARDS
+    ============================================ */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-accent);
+      opacity: 0;
+      transition: var(--transition);
+      border-radius: inherit;
+    }
+
+    .card:hover {
+      border-color: var(--violet-core);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .card:hover::before { opacity: 0.04; }
+
+    /* ============================================
+       BUTTONS
+    ============================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      border: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--gradient-accent);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--violet-light);
+      border: 1.5px solid var(--violet-core);
+    }
+
+    .btn-outline:hover {
+      background: var(--violet-core);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: var(--bg-glass);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+    }
+
+    .btn-ghost:hover {
+      background: var(--border);
+      color: var(--text-primary);
+    }
+
+    /* ============================================
+       BADGES & TAGS
+    ============================================ */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .badge-violet {
+      background: rgba(124, 58, 237, 0.15);
+      color: var(--violet-light);
+      border: 1px solid rgba(124, 58, 237, 0.3);
+    }
+
+    .badge-green {
+      background: rgba(16, 185, 129, 0.1);
+      color: #34D399;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .badge-blue {
+      background: rgba(59, 130, 246, 0.1);
+      color: #60A5FA;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    /* ============================================
+       NAVBAR
+    ============================================ */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: var(--transition);
+    }
+
+    #navbar.scrolled {
+      background: rgba(13, 13, 26, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+
+    [data-theme="light"] #navbar.scrolled {
+      background: rgba(250, 250, 250, 0.92);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .nav-logo span { color: var(--violet-light); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+      background: var(--bg-glass);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-glass);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--text-secondary);
+    }
+
+    .icon-btn:hover {
+      background: var(--violet-core);
+      color: #fff;
+      border-color: var(--violet-core);
+    }
+
+    .lang-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: var(--bg-primary);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .mobile-menu a:hover { color: var(--violet-light); }
+
+    /* ============================================
+       HERO SECTION
+    ============================================ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--gradient-hero);
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    /* Animated data grid background */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .data-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(124, 58, 237, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 58, 237, 0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridFloat 20s linear infinite;
+    }
+
+    @keyframes gridFloat {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(60px); }
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .orb-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+
+    .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.12) 0%, transparent 70%);
+      bottom: 100px;
+      left: -50px;
+      animation: orbFloat 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.05); }
+    }
+
+    /* Floating data particles */
+    .particles { position: absolute; inset: 0; pointer-events: none; }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--violet-light);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.2s forwards;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--violet-light);
+    }
+
+    .hero-name {
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.4s forwards;
+    }
+
+    .hero-title {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.6s forwards;
+    }
+
+    .hero-title strong {
+      color: var(--violet-light);
+      font-weight: 600;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      max-width: 500px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.8s forwards;
+    }
+
+    .hero-tagline em {
+      color: var(--violet-light);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1s forwards;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.2s forwards;
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--violet-light);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Hero avatar */
+    .hero-avatar-wrapper {
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.6s forwards;
+    }
+
+    .hero-avatar-ring {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      padding: 4px;
+      background: var(--gradient-accent);
+      position: relative;
+    }
+
+    .hero-avatar-ring::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      border-radius: 50%;
+      border: 1px dashed rgba(124, 58, 237, 0.3);
+      animation: spin 20s linear infinite;
+    }
+
+    .hero-avatar-ring::after {
+      content: '';
+      position: absolute;
+      inset: -40px;
+      border-radius: 50%;
+      border: 1px dashed rgba(124, 58, 237, 0.15);
+      animation: spin 30s linear infinite reverse;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      background: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 5rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* Floating data badges on avatar */
+    .float-badge {
+      position: absolute;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text-primary);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-card);
+      white-space: nowrap;
+    }
+
+    .float-badge-1 {
+      top: 20px;
+      right: -40px;
+      animation: badgeFloat 4s ease-in-out infinite;
+    }
+
+    .float-badge-2 {
+      bottom: 40px;
+      left: -50px;
+      animation: badgeFloat 4s ease-in-out infinite 1s;
+    }
+
+    .float-badge-3 {
+      top: 50%;
+      right: -60px;
+      transform: translateY(-50%);
+      animation: badgeFloat 4s ease-in-out infinite 2s;
+    }
+
+    @keyframes badgeFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .float-badge-3 {
+      animation: badgeFloat3 4s ease-in-out infinite 2s;
+    }
+
+    @keyframes badgeFloat3 {
+      0%, 100% { transform: translateY(-50%); }
+      50% { transform: translateY(calc(-50% - 8px)); }
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34D399;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.8); }
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.1em;
+      opacity: 0;
+      animation: fadeIn 1s ease 2s forwards;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--violet-core), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.5; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(0.8); }
+    }
+
+    /* ============================================
+       ABOUT SECTION
+    ============================================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-text p strong { color: var(--violet-light); font-weight: 600; }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .highlight-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: var(--transition);
+    }
+
+    .highlight-item:hover {
+      border-color: var(--violet-core);
+      transform: translateY(-2px);
+    }
+
+    .highlight-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: rgba(124, 58, 237, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--violet-light);
+      flex-shrink: 0;
+    }
+
+    .highlight-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 2px;
+    }
+
+    .highlight-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    /* About info right column */
+    .about-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-info-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .info-row:last-child { border-bottom: none; }
+
+    .info-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: rgba(124, 58, 237, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--violet-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .info-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .info-value a {
+      color: var(--violet-light);
+      text-decoration: none;
+    }
+
+    .info-value a:hover { text-decoration: underline; }
+
+    /* Languages */
+    .lang-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    /* ============================================
+       SKILLS SECTION
+    ============================================ */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: var(--transition);
+    }
+
+    .skill-category:hover {
+      border-color: var(--violet-core);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .skill-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .skill-cat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: rgba(124, 58, 237, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--violet-light);
+      font-size: 1.2rem;
+    }
+
+    .skill-cat-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    .skill-items { display: flex; flex-direction: column; gap: 14px; }
+
+    .skill-item {}
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .skill-name { font-size: 0.9rem; font-weight: 500; color: var(--text-primary); }
+    .skill-pct { font-size: 0.8rem; color: var(--violet-light); font-family: 'JetBrains Mono', monospace; }
+
+    .skill-bar {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--gradient-accent);
+      border-radius: 2px;
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .skill-fill.animate { width: var(--target-width); }
+
+    /* Tech stack pills */
+    .tech-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .tech-pill {
+      padding: 6px 16px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      font-family: 'JetBrains Mono', monospace;
+      transition: var(--transition);
+    }
+
+    .tech-pill:hover {
+      background: rgba(124, 58, 237, 0.15);
+      color: var(--violet-light);
+      border-color: var(--violet-core);
+    }
+
+    /* ============================================
+       EXPERIENCE SECTION
+    ============================================ */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--violet-core), transparent);
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 48px;
+      position: relative;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline-dot {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--gradient-accent);
+      border: 3px solid var(--bg-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-content {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: var(--transition);
+    }
+
+    .timeline-content:hover {
+      border-color: var(--violet-core);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .exp-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .exp-company {
+      font-weight: 600;
+      color: var(--violet-light);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .exp-period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .exp-meta {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .exp-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .exp-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .exp-bullets li::before {
+      content: '▸';
+      color: var(--violet-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ============================================
+       EDUCATION SECTION
+    ============================================ */
+    .edu-grid {
+      display: grid;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .edu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: start;
+      transition: var(--transition);
+    }
+
+    .edu-card:hover {
+      border-color: var(--violet-core);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .edu-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: rgba(124, 58, 237, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--violet-light);
+    }
+
+    .edu-degree {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .edu-school {
+      color: var(--violet-light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .edu-period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .edu-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .edu-project {
+      margin-top: 12px;
+      padding: 12px 16px;
+      background: rgba(124, 58, 237, 0.08);
+      border-left: 3px solid var(--violet-core);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.88rem;
+    }
+
+    .edu-project strong { color: var(--violet-light); }
+    .edu-project span { color: var(--text-secondary); }
+
+    /* ============================================
+       CERTIFICATIONS SECTION
+    ============================================ */
+    .cert-placeholder {
+      text-align: center;
+      padding: 80px 40px;
+      background: var(--bg-card);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-xl);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cert-placeholder-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(124, 58, 237, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      color: var(--violet-light);
+    }
+
+    .cert-placeholder h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .cert-placeholder p { color: var(--text-secondary); font-size: 0.95rem; }
+
+    /* ============================================
+       PROJECTS SECTION
+    ============================================ */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      border-color: var(--violet-core);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-6px);
+    }
+
+    .project-header {
+      padding: 32px 32px 24px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, transparent 60%);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .project-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: rgba(124, 58, 237, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--violet-light);
+    }
+
+    .project-body { padding: 24px 32px 32px; flex: 1; }
+
+    .project-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+
+    .project-footer {
+      padding: 20px 32px;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Placeholder project */
+    .project-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      background: var(--bg-card);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-lg);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: var(--transition);
+      cursor: default;
+    }
+
+    .project-placeholder:hover {
+      border-color: var(--violet-core);
+      color: var(--violet-light);
+    }
+
+    .project-placeholder-inner {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .project-placeholder-inner p { margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+
+    /* ============================================
+       PORTFOLIO SECTIONS (BI, SQL, etc.)
+    ============================================ */
+    .portfolio-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .portfolio-tab {
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+    }
+
+    .portfolio-tab:hover, .portfolio-tab.active {
+      background: var(--violet-core);
+      color: white;
+      border-color: var(--violet-core);
+      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+    }
+
+    .portfolio-panel { display: none; }
+    .portfolio-panel.active { display: block; }
+
+    .placeholder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .placeholder-card {
+      background: var(--bg-card);
+      border: 1.5px dashed var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 24px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: default;
+    }
+
+    .placeholder-card:hover {
+      border-color: var(--violet-light);
+      background: rgba(124, 58, 237, 0.04);
+    }
+
+    .placeholder-card-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-md);
+      background: rgba(124, 58, 237, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--violet-light);
+    }
+
+    .placeholder-card h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .placeholder-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ============================================
+       ACHIEVEMENTS SECTION
+    ============================================ */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .achievement-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .achievement-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--violet-core);
+    }
+
+    .achievement-card:hover::after { transform: scaleX(1); }
+
+    .achievement-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(124, 58, 237, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--violet-light);
+    }
+
+    .achievement-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--violet-light);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .achievement-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ============================================
+       TESTIMONIALS SECTION
+    ============================================ */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--violet-core);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .quote-icon {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      color: rgba(124, 58, 237, 0.2);
+    }
+
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gradient-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      color: white;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .author-role {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Placeholder testimonial */
+    .testimonial-placeholder {
+      border-style: dashed;
+      opacity: 0.6;
+    }
+
+    /* ============================================
+       CONTACT SECTION
+    ============================================ */
+    #contact { background: var(--bg-secondary); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .contact-links { display: flex; flex-direction: column; gap: 16px; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: var(--transition);
+      color: var(--text-primary);
+    }
+
+    .contact-link:hover {
+      border-color: var(--violet-core);
+      transform: translateX(6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .contact-link-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(124, 58, 237, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--violet-light);
+      flex-shrink: 0;
+    }
+
+    .contact-link-text { font-weight: 500; font-size: 0.92rem; }
+    .contact-link-sub { font-size: 0.8rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
+
+    /* Contact form */
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .form-input, .form-textarea {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      outline: none;
+      resize: none;
+      width: 100%;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--violet-core);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    }
+
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
+
+    .form-textarea { min-height: 140px; }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    .footer-logo span { color: var(--violet-light); }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .footer-socials { display: flex; gap: 8px; }
+
+    /* ============================================
+       SCROLL REVEAL ANIMATIONS
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 1024px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; }
+      .hero-avatar-wrapper { display: none; }
+      .hero-eyebrow { justify-content: center; }
+      .hero-tagline { margin: 0 auto 40px; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .float-badge { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 72px 0; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .about-highlights { grid-template-columns: 1fr; }
+      .edu-card { grid-template-columns: 1fr; }
+      .timeline::before { left: 16px; }
+      .timeline-dot { width: 34px; height: 34px; }
+      .timeline-item { gap: 20px; }
+      .hero-stats { flex-wrap: wrap; gap: 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .btn { padding: 12px 20px; font-size: 0.88rem; }
+      .card { padding: 24px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+    }
+
+    /* ============================================
+       REDUCED MOTION
+    ============================================ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ============================================
+       ACTIVE NAV LINK
+    ============================================ */
+    .nav-links a.active {
+      color: var(--violet-light);
+      background: var(--bg-glass);
+    }
+
+    /* Language hidden class */
+    [data-fr], [data-en] { }
+    [data-lang="fr"] [data-en] { display: none !important; }
+    [data-lang="en"] [data-fr] { display: none !important; }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVBAR
+  ============================================ -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <!-- Logo -->
+        <a href="#hero" class="nav-logo">FM<span>.</span></a>
+
+        <!-- Nav links (desktop) -->
+        <ul class="nav-links">
+          <li><a href="#about" data-fr>À propos</a><a href="#about" data-en>About</a></li>
+          <li><a href="#skills" data-fr>Compétences</a><a href="#skills" data-en>Skills</a></li>
+          <li><a href="#experience" data-fr>Expériences</a><a href="#experience" data-en>Experience</a></li>
+          <li><a href="#education" data-fr>Formation</a><a href="#education" data-en>Education</a></li>
+          <li><a href="#projects" data-fr>Projets</a><a href="#projects" data-en>Projects</a></li>
+          <li><a href="#portfolio" data-fr>Portfolio</a><a href="#portfolio" data-en>Portfolio</a></li>
+          <li><a href="#contact" data-fr>Contact</a><a href="#contact" data-en>Contact</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <!-- Language toggle -->
+          <button class="icon-btn lang-btn" id="lang-toggle" title="Switch language">FR</button>
+          <!-- Theme toggle -->
+          <button class="icon-btn" id="theme-toggle" title="Toggle theme">
+            <i data-lucide="moon" width="16" height="16"></i>
+          </button>
+          <!-- CV download -->
+          <a href="CV_2026-06-17_Fella_MOUSSAOUI.pdf" download class="btn btn-primary" style="padding: 10px 20px; font-size:0.85rem;">
+            <i data-lucide="download" width="16" height="16"></i>
+            <span data-fr>CV</span><span data-en>Resume</span>
+          </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="icon-btn" id="mobile-close" style="position:absolute;top:24px;right:24px;" aria-label="Close">
+      <i data-lucide="x" width="20" height="20"></i>
+    </button>
+    <a href="#about" data-fr onclick="closeMobile()">À propos</a>
+    <a href="#about" data-en onclick="closeMobile()">About</a>
+    <a href="#skills" data-fr onclick="closeMobile()">Compétences</a>
+    <a href="#skills" data-en onclick="closeMobile()">Skills</a>
+    <a href="#experience" data-fr onclick="closeMobile()">Expériences</a>
+    <a href="#experience" data-en onclick="closeMobile()">Experience</a>
+    <a href="#education" data-fr onclick="closeMobile()">Formation</a>
+    <a href="#education" data-en onclick="closeMobile()">Education</a>
+    <a href="#projects" data-fr onclick="closeMobile()">Projets</a>
+    <a href="#projects" data-en onclick="closeMobile()">Projects</a>
+    <a href="#contact" data-fr onclick="closeMobile()">Contact</a>
+    <a href="#contact" data-en onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- ============================================
+       HERO SECTION
+  ============================================ -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="data-grid"></div>
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <!-- Left: Text -->
+        <div class="hero-text">
+          <div class="hero-eyebrow">
+            <span data-fr>Ingénieure Big Data & BI</span>
+            <span data-en>Big Data & BI Engineer</span>
+          </div>
+
+          <h1 class="hero-name display-xl">
+            Fella <span class="gradient-text">MOUSSAOUI</span>
+          </h1>
+
+          <p class="hero-title">
+            <strong data-fr>Big Data Analyst</strong>
+            <strong data-en>Big Data Analyst</strong>
+            <span data-fr> · Analyste BI · Data Scientist</span>
+            <span data-en> · BI Analyst · Data Scientist</span>
+          </p>
+
+          <p class="hero-tagline">
+            <span data-fr>Transformer des données brutes en <em>décisions stratégiques</em>.<br>Spécialisée en Big Data Analytics, Business Intelligence et Machine Learning.</span>
+            <span data-en>Turning raw data into <em>strategic decisions</em>.<br>Specialized in Big Data Analytics, Business Intelligence & Machine Learning.</span>
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i data-lucide="bar-chart-2" width="18" height="18"></i>
+              <span data-fr>Voir mes projets</span>
+              <span data-en>View my work</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i data-lucide="send" width="18" height="18"></i>
+              <span data-fr>Me contacter</span>
+              <span data-en>Get in touch</span>
+            </a>
+            <a href="CV_2026-06-17_Fella_MOUSSAOUI.pdf" download class="btn btn-ghost">
+              <i data-lucide="download" width="18" height="18"></i>
+              <span data-fr>Télécharger CV</span>
+              <span data-en>Download Resume</span>
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">2+</div>
+              <div class="stat-label" data-fr>ans d'expérience</div>
+              <div class="stat-label" data-en>years exp.</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">5+</div>
+              <div class="stat-label" data-fr>outils BI maîtrisés</div>
+              <div class="stat-label" data-en>BI tools mastered</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label" data-fr>langues</div>
+              <div class="stat-label" data-en>languages</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">M2</div>
+              <div class="stat-label" data-fr>Big Data Analytics</div>
+              <div class="stat-label" data-en>Big Data Analytics</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Avatar -->
+        <div class="hero-avatar-wrapper">
+          <div class="hero-avatar-ring">
+            <div class="hero-avatar">
+              <div class="avatar-placeholder">FM</div>
+            </div>
+          </div>
+
+          <!-- Floating badges -->
+          <div class="float-badge float-badge-1">
+            <div class="badge-dot"></div>
+            <span data-fr>Disponible</span><span data-en>Available</span>
+          </div>
+          <div class="float-badge float-badge-2">
+            <i data-lucide="database" width="14" height="14" style="color:var(--violet-light)"></i>
+            Big Data
+          </div>
+          <div class="float-badge float-badge-3">
+            <i data-lucide="bar-chart-2" width="14" height="14" style="color:var(--violet-light)"></i>
+            Power BI
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#about" class="scroll-indicator">
+      <span data-fr>Défiler</span><span data-en>Scroll</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- ============================================
+       ABOUT SECTION
+  ============================================ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">01 — <span data-fr>À propos</span><span data-en>About me</span></span>
+        <h2 class="section-title">
+          <span data-fr>Qui suis-je ?</span>
+          <span data-en>Who am I?</span>
+        </h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Text left -->
+        <div class="about-text reveal">
+          <p data-fr><strong>Ingénieure en informatique</strong> spécialisée en Big Data Analytics, je combine une expertise technique solide avec une capacité analytique orientée résultats. Passionnée par la Data Science, je transforme des données complexes en insights actionnables.</p>
+          <p data-en><strong>Computer science engineer</strong> specialized in Big Data Analytics, I combine solid technical expertise with results-driven analytical skills. Passionate about Data Science, I transform complex datasets into actionable insights.</p>
+
+          <p data-fr>Actuellement en poste à la <strong>CNEP Banque</strong> en tant qu'Ingénieure d'état en informatique, j'analyse et gère les données sur le système Temenos T24 et optimise les processus SI bancaires.</p>
+          <p data-en>Currently working at <strong>CNEP Banque</strong> as a State IT Engineer, I analyze and manage data on the Temenos T24 system and optimize banking information systems.</p>
+
+          <p data-fr>Mon ambition : développer des solutions data innovantes qui <strong>transforment les données en décisions stratégiques</strong> et créent une valeur mesurable pour les organisations.</p>
+          <p data-en>My ambition: to develop innovative data solutions that <strong>transform data into strategic decisions</strong> and create measurable value for organizations.</p>
+
+          <!-- Highlights -->
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon"><i data-lucide="map-pin" width="20" height="20"></i></div>
+              <div>
+                <div class="highlight-label" data-fr>Localisation</div>
+                <div class="highlight-label" data-en>Location</div>
+                <div class="highlight-value">Kouba, Alger</div>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i data-lucide="briefcase" width="20" height="20"></i></div>
+              <div>
+                <div class="highlight-label" data-fr>Statut</div>
+                <div class="highlight-label" data-en>Status</div>
+                <div class="highlight-value" data-fr>En poste · Ouvert(e)</div>
+                <div class="highlight-value" data-en>Employed · Open to opportunities</div>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i data-lucide="graduation-cap" width="20" height="20"></i></div>
+              <div>
+                <div class="highlight-label" data-fr>Diplôme</div>
+                <div class="highlight-label" data-en>Degree</div>
+                <div class="highlight-value">Master Big Data Analytics</div>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i data-lucide="calendar" width="20" height="20"></i></div>
+              <div>
+                <div class="highlight-label" data-fr>Expérience</div>
+                <div class="highlight-label" data-en>Experience</div>
+                <div class="highlight-value" data-fr>2+ ans</div>
+                <div class="highlight-value" data-en>2+ years</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info card right -->
+        <div class="about-info-card reveal">
+          <div class="info-row">
+            <div class="info-icon"><i data-lucide="mail" width="18" height="18"></i></div>
+            <div>
+              <div class="info-label">Email</div>
+              <div class="info-value"><a href="mailto:moussaouifella2001@gmail.com">moussaouifella2001@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><i data-lucide="phone" width="18" height="18"></i></div>
+            <div>
+              <div class="info-label" data-fr>Téléphone</div>
+              <div class="info-label" data-en>Phone</div>
+              <div class="info-value"><a href="tel:+213795822492">+213 795 82 24 92</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><i data-lucide="linkedin" width="18" height="18"></i></div>
+            <div>
+              <div class="info-label">LinkedIn</div>
+              <div class="info-value"><a href="https://www.linkedin.com/in/fella-moussaoui-751793200" target="_blank" rel="noopener">linkedin.com/in/fella-moussaoui</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><i data-lucide="github" width="18" height="18"></i></div>
+            <div>
+              <div class="info-label">GitHub</div>
+              <div class="info-value"><a href="https://github.com/Allufmi" target="_blank" rel="noopener">github.com/fellamoussaoui</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><i data-lucide="globe" width="18" height="18"></i></div>
+            <div>
+              <div class="info-label" data-fr>Langues</div>
+              <div class="info-label" data-en>Languages</div>
+              <div class="lang-badges">
+                <span class="badge badge-violet">🇩🇿 Arabe</span>
+                <span class="badge badge-blue">🇫🇷 Français</span>
+                <span class="badge badge-green">🇬🇧 English</span>
+              </div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><i data-lucide="star" width="18" height="18"></i></div>
+            <div>
+              <div class="info-label" data-fr>Atouts clés</div>
+              <div class="info-label" data-en>Key strengths</div>
+              <div class="tech-cloud" style="margin-top:8px;">
+                <span class="tech-pill" data-fr>Gestion de projet</span><span class="tech-pill" data-en>Project management</span>
+                <span class="tech-pill" data-fr>Sens du détail</span><span class="tech-pill" data-en>Attention to detail</span>
+                <span class="tech-pill" data-fr>Analyse critique</span><span class="tech-pill" data-en>Critical analysis</span>
+                <span class="tech-pill" data-fr>Adaptabilité</span><span class="tech-pill" data-en>Adaptability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SKILLS SECTION
+  ============================================ -->
+  <section id="skills" class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">02 — <span data-fr>Compétences</span><span data-en>Skills</span></span>
+        <h2 class="section-title">
+          <span data-fr>Stack <span class="gradient-text">technique</span></span>
+          <span data-en>Technical <span class="gradient-text">stack</span></span>
+        </h2>
+        <p class="section-desc" data-fr>Outils et technologies maîtrisés pour transformer les données en valeur métier.</p>
+        <p class="section-desc" data-en>Tools and technologies mastered to transform data into business value.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- Data Analysis & BI -->
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i data-lucide="bar-chart-2" width="24" height="24"></i></div>
+            <div>
+              <div class="skill-cat-title" data-fr>Analyse & BI</div>
+              <div class="skill-cat-title" data-en>Analytics & BI</div>
+            </div>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Power BI</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Tableau</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Talend</span>
+                <span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:75%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Excel Avancé</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:88%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Python & Data Science -->
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i data-lucide="code-2" width="24" height="24"></i></div>
+            <div>
+              <div class="skill-cat-title" data-fr>Python & Data Science</div>
+              <div class="skill-cat-title" data-en>Python & Data Science</div>
+            </div>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Python (Pandas, NumPy)</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:88%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Machine Learning (Scikit-learn)</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Data Viz (Matplotlib, Seaborn)</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">R</span>
+                <span class="skill-pct">70%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i data-lucide="database" width="24" height="24"></i></div>
+            <div>
+              <div class="skill-cat-title" data-fr>Bases de données</div>
+              <div class="skill-cat-title" data-en>Databases</div>
+            </div>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">SQL / MySQL</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Oracle / MS SQL Server</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">MongoDB</span>
+                <span class="skill-pct">72%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:72%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-name">Cassandra</span>
+                <span class="skill-pct">65%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="--target-width:65%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dev & Tools -->
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i data-lucide="terminal" width="24" height="24"></i></div>
+            <div>
+              <div class="skill-cat-title" data-fr>Dev & Outils</div>
+              <div class="skill-cat-title" data-en>Dev & Tools</div>
+            </div>
+          </div>
+          <div class="tech-cloud" style="margin-top: 8px;">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">C++</span>
+            <span class="tech-pill">Java</span>
+            <span class="tech-pill">JavaScript</span>
+            <span class="tech-pill">HTML/CSS</span>
+            <span class="tech-pill">Temenos T24</span>
+            <span class="tech-pill">CPLEX</span>
+            <span class="tech-pill">Git</span>
+            <span class="tech-pill">Power BI</span>
+            <span class="tech-pill">Talend</span>
+            <span class="tech-pill">Hadoop</span>
+            <span class="tech-pill">Spark</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       EXPERIENCE SECTION
+  ============================================ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">03 — <span data-fr>Expériences</span><span data-en>Experience</span></span>
+        <h2 class="section-title">
+          <span data-fr>Parcours <span class="gradient-text">professionnel</span></span>
+          <span data-en>Professional <span class="gradient-text">journey</span></span>
+        </h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="timeline">
+
+        <!-- CNEP Banque -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i data-lucide="building-2" width="20" height="20"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="exp-header">
+              <div>
+                <div class="exp-title" data-fr>Ingénieure d'État en Informatique</div>
+                <div class="exp-title" data-en>State IT Engineer</div>
+                <div class="exp-company">CNEP Banque — Baba Hassen, Alger</div>
+                <div class="exp-period" data-fr>Depuis mai 2025 · Poste actuel</div>
+                <div class="exp-period" data-en>Since May 2025 · Current position</div>
+              </div>
+              <div>
+                <span class="badge badge-green" data-fr>En cours</span>
+                <span class="badge badge-green" data-en>Current</span>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span class="badge badge-violet">Temenos T24</span>
+              <span class="badge badge-violet">Data Management</span>
+              <span class="badge badge-violet">SI Bancaire</span>
+            </div>
+            <ul class="exp-bullets">
+              <li data-fr>Analyse et gestion des données sur le système bancaire Temenos T24</li>
+              <li data-en>Data analysis and management on Temenos T24 banking system</li>
+              <li data-fr>Résolution des problématiques techniques des agences bancaires</li>
+              <li data-en>Resolution of technical issues for banking branches</li>
+              <li data-fr>Paramétrage, déploiement et modification des fonctionnalités SI</li>
+              <li data-en>Configuration, deployment and modification of IS functionalities</li>
+              <li data-fr>Mise en place de solutions adaptées pour optimiser le système d'information</li>
+              <li data-en>Implementation of tailored solutions to optimize the information system</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Djezzy -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i data-lucide="trending-up" width="20" height="20"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="exp-header">
+              <div>
+                <div class="exp-title" data-fr>Stagiaire en Data Science</div>
+                <div class="exp-title" data-en>Data Science Intern</div>
+                <div class="exp-company">DJEZZY — Dar El Beida, Alger</div>
+                <div class="exp-period" data-fr>Janvier 2024 – Juin 2024 · 6 mois</div>
+                <div class="exp-period" data-en>January 2024 – June 2024 · 6 months</div>
+              </div>
+              <div>
+                <span class="badge badge-blue" data-fr>Stage</span>
+                <span class="badge badge-blue" data-en>Internship</span>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span class="badge badge-violet">Python</span>
+              <span class="badge badge-violet">Machine Learning</span>
+              <span class="badge badge-violet">Data Analytics</span>
+            </div>
+            <ul class="exp-bullets">
+              <li data-fr>Analyse de données clients à grande échelle et développement de modèles prédictifs</li>
+              <li data-en>Large-scale customer data analysis and development of predictive models</li>
+              <li data-fr>Utilisation et évaluation des méthodes d'ensemble (Random Forest, Gradient Boosting)</li>
+              <li data-en>Use and evaluation of ensemble methods (Random Forest, Gradient Boosting)</li>
+              <li data-fr>Nettoyage, prétraitement et visualisation des données clients Djezzy</li>
+              <li data-en>Cleaning, preprocessing and visualization of Djezzy customer data</li>
+              <li data-fr>Collaboration avec des experts métier pour définir les perspectives commerciales</li>
+              <li data-en>Collaboration with business experts to define commercial insights</li>
+              <li data-fr>Projet final : Customer Propensity & Data Affinity Analytics</li>
+              <li data-en>Final project: Customer Propensity & Data Affinity Analytics</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       EDUCATION SECTION
+  ============================================ -->
+  <section id="education" class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">04 — <span data-fr>Formation</span><span data-en>Education</span></span>
+        <h2 class="section-title">
+          <span data-fr>Parcours <span class="gradient-text">académique</span></span>
+          <span data-en>Academic <span class="gradient-text">background</span></span>
+        </h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="edu-grid">
+
+        <!-- Master -->
+        <div class="edu-card reveal">
+          <div class="edu-icon"><i data-lucide="graduation-cap" width="28" height="28"></i></div>
+          <div>
+            <div class="edu-degree" data-fr>Master en Informatique — Big Data Analytics</div>
+            <div class="edu-degree" data-en>Master's in Computer Science — Big Data Analytics</div>
+            <div class="edu-school" data-fr>Université des Sciences et Technologie Houari Boumediene (USTHB)</div>
+            <div class="edu-school" data-en>University of Science & Technology Houari Boumediene (USTHB)</div>
+            <div class="edu-period">2022 – 2024 · Bab Ezzouar, Alger</div>
+            <div class="edu-desc" data-fr>Programmation avancée, Entrepôts de données, Architecture de bases de données, Graphes & Big Data, Analyse de données, Bases de données avancées, Machine Learning</div>
+            <div class="edu-desc" data-en>Advanced programming, Data warehouses, Database architecture, Graphs & Big Data, Data analysis, Advanced databases, Machine Learning</div>
+            <div class="edu-project">
+              <strong data-fr>Projet de fin d'études : </strong>
+              <strong data-en>Final project: </strong>
+              <span>Djezzy Customer Propensity and Data Affinity Analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Licence -->
+        <div class="edu-card reveal">
+          <div class="edu-icon"><i data-lucide="book-open" width="28" height="28"></i></div>
+          <div>
+            <div class="edu-degree" data-fr>Licence en Recherche Opérationnelle</div>
+            <div class="edu-degree" data-en>Bachelor's in Operations Research</div>
+            <div class="edu-school" data-fr>Université des Sciences et Technologie Houari Boumediene (USTHB)</div>
+            <div class="edu-school" data-en>University of Science & Technology Houari Boumediene (USTHB)</div>
+            <div class="edu-period">2019 – 2022 · Bab Ezzouar, Alger</div>
+            <div class="edu-desc" data-fr>Méthodes de recherche opérationnelle, Programmation mathématique, Algorithmes d'optimisation, CPLEX</div>
+            <div class="edu-desc" data-en>Operations research methods, Mathematical programming, Optimization algorithms, CPLEX</div>
+            <div class="edu-project">
+              <strong data-fr>Projet de fin d'études : </strong>
+              <strong data-en>Final project: </strong>
+              <span data-fr>Heuristiques pour le problème de coloration de graphes</span>
+              <span data-en>Heuristics for the graph coloring problem</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bac -->
+        <div class="edu-card reveal">
+          <div class="edu-icon"><i data-lucide="award" width="28" height="28"></i></div>
+          <div>
+            <div class="edu-degree" data-fr>Baccalauréat Technique Mathématique</div>
+            <div class="edu-degree" data-en>Technical Baccalaureate in Mathematics</div>
+            <div class="edu-school" data-fr>Lycée Ali Ammar — Kouba, Alger</div>
+            <div class="edu-school" data-en>Ali Ammar High School — Kouba, Algiers</div>
+            <div class="edu-period">2016 – 2019</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CERTIFICATIONS SECTION
+  ============================================ -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">05 — <span data-fr>Certifications</span><span data-en>Certifications</span></span>
+        <h2 class="section-title">
+          <span data-fr>Certifications <span class="gradient-text">& Badges</span></span>
+          <span data-en>Certifications <span class="gradient-text">& Badges</span></span>
+        </h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="cert-placeholder reveal">
+        <div class="cert-placeholder-icon"><i data-lucide="award" width="36" height="36"></i></div>
+        <h3 data-fr>Section certifications à venir</h3>
+        <h3 data-en>Certifications coming soon</h3>
+        <p data-fr>Ajoutez ici vos certifications : Google Data Analytics, Microsoft PL-300, Coursera, DataCamp, etc.</p>
+        <p data-en>Add your certifications here: Google Data Analytics, Microsoft PL-300, Coursera, DataCamp, etc.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROJECTS SECTION
+  ============================================ -->
+  <section id="projects" class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">06 — <span data-fr>Projets</span><span data-en>Projects</span></span>
+        <h2 class="section-title">
+          <span data-fr>Études de <span class="gradient-text">cas</span></span>
+          <span data-en>Case <span class="gradient-text">studies</span></span>
+        </h2>
+        <p class="section-desc" data-fr>Projets concrets démontrant mes compétences en analyse de données.</p>
+        <p class="section-desc" data-en>Real projects showcasing my data analytics skills.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Djezzy PFE -->
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="users" width="28" height="28"></i></div>
+            <span class="badge badge-violet">Machine Learning</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-fr>Customer Propensity & Data Affinity Analytics</h3>
+            <h3 class="project-title" data-en>Customer Propensity & Data Affinity Analytics</h3>
+            <p class="project-desc" data-fr>Analyse de la propension des clients Djezzy à adopter de nouveaux services. Modèles prédictifs pour identifier les segments à forte valeur commerciale.</p>
+            <p class="project-desc" data-en>Analysis of Djezzy customer propensity to adopt new services. Predictive models to identify high-value commercial segments.</p>
+            <div class="project-tags">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Pandas</span>
+              <span class="tech-pill">Scikit-learn</span>
+              <span class="tech-pill">Matplotlib</span>
+              <span class="tech-pill">Ensemble Methods</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn btn-outline" style="font-size:0.82rem;padding:8px 16px;" data-fr>Voir le projet</a>
+            <a href="#" class="btn btn-outline" style="font-size:0.82rem;padding:8px 16px;" data-en>View project</a>
+          </div>
+        </div>
+
+        <!-- Project 2: Graph coloring -->
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon"><i data-lucide="git-branch" width="28" height="28"></i></div>
+            <span class="badge badge-blue">Optimization</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-fr>Heuristiques pour le Problème de Coloration de Graphes</h3>
+            <h3 class="project-title" data-en>Heuristics for the Graph Coloring Problem</h3>
+            <p class="project-desc" data-fr>Développement et comparaison d'algorithmes heuristiques pour résoudre le problème NP-difficile de coloration de graphes.</p>
+            <p class="project-desc" data-en>Development and comparison of heuristic algorithms to solve the NP-hard graph coloring problem.</p>
+            <div class="project-tags">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">CPLEX</span>
+              <span class="tech-pill">Algorithmes</span>
+              <span class="tech-pill">Optimisation</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="#" class="btn btn-outline" style="font-size:0.82rem;padding:8px 16px;" data-fr>Voir le projet</a>
+            <a href="#" class="btn btn-outline" style="font-size:0.82rem;padding:8px 16px;" data-en>View project</a>
+          </div>
+        </div>
+
+        <!-- Placeholder 3 -->
+        <div class="project-placeholder reveal">
+          <div class="project-placeholder-inner">
+            <i data-lucide="plus-circle" width="40" height="40" style="color:var(--text-muted)"></i>
+            <p data-fr>Projet Power BI à venir</p>
+            <p data-en>Power BI project coming soon</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PORTFOLIO SECTION (Tabs)
+  ============================================ -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">07 — Portfolio</span>
+        <h2 class="section-title">
+          <span data-fr>Portfolio <span class="gradient-text">Data</span></span>
+          <span data-en>Data <span class="gradient-text">Portfolio</span></span>
+        </h2>
+        <p class="section-desc" data-fr>Explorez mes réalisations par domaine technique.</p>
+        <p class="section-desc" data-en>Browse my work by technical domain.</p>
+        <div class="divider"></div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="portfolio-tabs">
+        <button class="portfolio-tab active" onclick="switchTab('powerbi')">Power BI</button>
+        <button class="portfolio-tab" onclick="switchTab('sql')">SQL</button>
+        <button class="portfolio-tab" onclick="switchTab('python')">Python</button>
+        <button class="portfolio-tab" onclick="switchTab('genai')">IA Générative</button>
+      </div>
+
+      <!-- Power BI panel -->
+      <div class="portfolio-panel active" id="panel-powerbi">
+        <div class="placeholder-grid">
+          <div class="placeholder-card">
+            <div class="placeholder-card-icon"><i data-lucide="pie-chart" width="28" height="28"></i></div>
+            <h4 data-fr>Dashboard Ventes</h4><h4 data-en>Sales Dashboard</h4>
+            <p data-fr>À ajouter</p><p data-en>To be added</p>
+          </div>
+          <div class="placeholder-card">
+            <div class="placeholder-card-icon"><i data-lucide="activity" width="28" height="28"></i></div>
+            <h4 data-fr>Reporting KPI</h4><h4 data-en>KPI Report</h4>
+            <p data-fr>À ajouter</p><p data-en>To be added</p>
+          </div>
+          <div class="placeholder-card">
+            <div class="placeholder-card-icon"><i data-lucide="map" width="28" height="28"></i></div>
+            <h4 data-fr>Analyse Géographique</h4><h4 data-en>Geographic Analysis</h4>
+            <p data-fr>À ajouter</p><p data-en>To be added</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SQL panel -->
+      <div class="portfolio-panel" id="panel-sql">
+        <div class="placeholder-grid">
+          <div class="placeholder-card">
+            <div class="placeholder-card-icon"><i data-lucide="database" width="28" height="28"></i></div>
+            <h4 data-fr>Requêtes Avancées</h4><h4 data-en>Advanced Queries</h4>
+            <p data-fr>À ajouter</p><p data-en>To be added</p>
+          </div>
+          <div class="placeholder-card">
+            <div class="placeholder-card-icon"><i data-lucide="table" width="28" height="28"></i></div>
+            <h4 data-fr>Data Warehouse Design</h4><h4 data-en>Data Warehouse Design</h4>
+            <p data-fr>À ajouter</p><p data-en>To be added</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Python panel -->
+      <div class="portfolio-panel" id="panel-python">
+        <div class="placeholder-grid">
+          <div class="placeholder-card">
+            <div class="placeholder-card-icon"><i data-lucide="code-2" width="28" height="28"></i></div>
+            <h4 data-fr>Analyse Exploratoire</h4><h4 data-en>Exploratory Analysis</h4>
+            <p data-fr>À ajouter</p><p data-en>To be added</p>
+          </div>
+          <div class="placeholder-card">
+            <div class="placeholder-card-icon"><i data-lucide="brain" width="28" height="28"></i></div>
+            <h4 data-fr>Modèle ML</h4><h4 data-en>ML Model</h4>
+            <p data-fr>À ajouter</p><p data-en>To be added</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GenAI panel -->
+      <div class="portfolio-panel" id="panel-genai">
+        <div class="placeholder-grid">
+          <div class="placeholder-card">
+            <div class="placeholder-card-icon"><i data-lucide="sparkles" width="28" height="28"></i></div>
+            <h4 data-fr>Prompt Engineering</h4><h4 data-en>Prompt Engineering</h4>
+            <p data-fr>À ajouter</p><p data-en>To be added</p>
+          </div>
+          <div class="placeholder-card">
+            <div class="placeholder-card-icon"><i data-lucide="bot" width="28" height="28"></i></div>
+            <h4 data-fr>LLM & RAG</h4><h4 data-en>LLM & RAG</h4>
+            <p data-fr>À ajouter</p><p data-en>To be added</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ACHIEVEMENTS SECTION
+  ============================================ -->
+  <section id="achievements" class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">08 — <span data-fr>Réalisations</span><span data-en>Achievements</span></span>
+        <h2 class="section-title">
+          <span data-fr>Résultats <span class="gradient-text">chiffrés</span></span>
+          <span data-en>Key <span class="gradient-text">metrics</span></span>
+        </h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="achievements-grid">
+        <div class="achievement-card reveal">
+          <div class="achievement-icon"><i data-lucide="zap" width="24" height="24"></i></div>
+          <div class="achievement-number">2+</div>
+          <div class="achievement-label" data-fr>Ans d'expérience professionnelle</div>
+          <div class="achievement-label" data-en>Years of professional experience</div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon"><i data-lucide="database" width="24" height="24"></i></div>
+          <div class="achievement-number">6+</div>
+          <div class="achievement-label" data-fr>Technologies de bases de données</div>
+          <div class="achievement-label" data-en>Database technologies mastered</div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon"><i data-lucide="bar-chart-2" width="24" height="24"></i></div>
+          <div class="achievement-number">3</div>
+          <div class="achievement-label" data-fr>Outils BI maîtrisés</div>
+          <div class="achievement-label" data-en>BI tools mastered</div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon"><i data-lucide="globe" width="24" height="24"></i></div>
+          <div class="achievement-number">3</div>
+          <div class="achievement-label" data-fr>Langues maîtrisées</div>
+          <div class="achievement-label" data-en>Languages spoken</div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon"><i data-lucide="graduation-cap" width="24" height="24"></i></div>
+          <div class="achievement-number">M2</div>
+          <div class="achievement-label" data-fr>Diplôme Big Data Analytics</div>
+          <div class="achievement-label" data-en>Big Data Analytics degree</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TESTIMONIALS SECTION
+  ============================================ -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">09 — <span data-fr>Témoignages</span><span data-en>Testimonials</span></span>
+        <h2 class="section-title">
+          <span data-fr>Ce qu'ils disent de <span class="gradient-text">moi</span></span>
+          <span data-en>What they say <span class="gradient-text">about me</span></span>
+        </h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Placeholder 1 -->
+        <div class="testimonial-card testimonial-placeholder reveal">
+          <i data-lucide="quote" width="32" height="32" class="quote-icon"></i>
+          <p class="testimonial-text" data-fr>"Espace réservé pour un témoignage. Demandez à un manager, collègue ou superviseur de stage de rédiger quelques lignes sur votre collaboration."</p>
+          <p class="testimonial-text" data-en>"Space reserved for a testimonial. Ask a manager, colleague or internship supervisor to write a few lines about your collaboration."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">?</div>
+            <div>
+              <div class="author-name" data-fr>Nom du collègue</div>
+              <div class="author-name" data-en>Colleague name</div>
+              <div class="author-role" data-fr>Poste · Entreprise</div>
+              <div class="author-role" data-en>Position · Company</div>
+            </div>
+          </div>
+        </div>
+        <!-- Placeholder 2 -->
+        <div class="testimonial-card testimonial-placeholder reveal">
+          <i data-lucide="quote" width="32" height="32" class="quote-icon"></i>
+          <p class="testimonial-text" data-fr>"Un deuxième espace pour un témoignage de votre encadrant de stage chez Djezzy ou de votre responsable actuel à la CNEP Banque."</p>
+          <p class="testimonial-text" data-en>"A second space for a testimonial from your Djezzy internship supervisor or your current manager at CNEP Banque."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">?</div>
+            <div>
+              <div class="author-name" data-fr>Nom du superviseur</div>
+              <div class="author-name" data-en>Supervisor name</div>
+              <div class="author-role" data-fr>Encadrant · Entreprise</div>
+              <div class="author-role" data-en>Supervisor · Company</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT SECTION
+  ============================================ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">10 — Contact</span>
+        <h2 class="section-title">
+          <span data-fr>Travaillons <span class="gradient-text">ensemble</span></span>
+          <span data-en>Let's work <span class="gradient-text">together</span></span>
+        </h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: info -->
+        <div class="contact-info reveal">
+          <h3 data-fr>Prenons contact</h3>
+          <h3 data-en>Get in touch</h3>
+          <p data-fr>Disponible pour des opportunités en Data Analytics, Business Intelligence ou Data Science. N'hésitez pas à me contacter pour discuter de vos projets data.</p>
+          <p data-en>Available for opportunities in Data Analytics, Business Intelligence or Data Science. Feel free to reach out to discuss your data projects.</p>
+
+          <div class="contact-links">
+            <a href="mailto:moussaouifella2001@gmail.com" class="contact-link">
+              <div class="contact-link-icon"><i data-lucide="mail" width="20" height="20"></i></div>
+              <div>
+                <div class="contact-link-text">moussaouifella2001@gmail.com</div>
+                <div class="contact-link-sub">Email</div>
+              </div>
+            </a>
+            <a href="tel:+213795822492" class="contact-link">
+              <div class="contact-link-icon"><i data-lucide="phone" width="20" height="20"></i></div>
+              <div>
+                <div class="contact-link-text">+213 795 82 24 92</div>
+                <div class="contact-link-sub" data-fr>Téléphone / WhatsApp</div>
+                <div class="contact-link-sub" data-en>Phone / WhatsApp</div>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/fella-moussaoui" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon"><i data-lucide="linkedin" width="20" height="20"></i></div>
+              <div>
+                <div class="contact-link-text">LinkedIn</div>
+                <div class="contact-link-sub">linkedin.com/in/fella-moussaoui</div>
+              </div>
+            </a>
+            <a href="https://github.com/fellamoussaoui" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon"><i data-lucide="github" width="20" height="20"></i></div>
+              <div>
+                <div class="contact-link-text">GitHub</div>
+                <div class="contact-link-sub">github.com/fellamoussaoui</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="reveal">
+          <form class="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="grid-2" style="gap:16px;">
+              <div class="form-group">
+                <label class="form-label" data-fr>Prénom & Nom</label>
+                <label class="form-label" data-en>Full Name</label>
+                <input type="text" class="form-input" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" placeholder="john@company.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-fr>Sujet</label>
+              <label class="form-label" data-en>Subject</label>
+              <input type="text" class="form-input" placeholder="Data Analyst opportunity" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-fr>Message</label>
+              <label class="form-label" data-en>Message</label>
+              <textarea class="form-textarea" placeholder="..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              <i data-lucide="send" width="18" height="18"></i>
+              <span data-fr>Envoyer le message</span>
+              <span data-en>Send message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Fella <span>MOUSSAOUI</span></div>
+        <div class="footer-copy" data-fr>© 2026 · Conçu avec passion pour les données</div>
+        <div class="footer-copy" data-en>© 2026 · Crafted with passion for data</div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/in/fella-moussaoui" target="_blank" rel="noopener" class="icon-btn" title="LinkedIn">
+            <i data-lucide="linkedin" width="16" height="16"></i>
+          </a>
+          <a href="https://github.com/fellamoussaoui" target="_blank" rel="noopener" class="icon-btn" title="GitHub">
+            <i data-lucide="github" width="16" height="16"></i>
+          </a>
+          <a href="mailto:moussaouifella2001@gmail.com" class="icon-btn" title="Email">
+            <i data-lucide="mail" width="16" height="16"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    /* ============================================
+       NAVBAR SCROLL EFFECT
+    ============================================ */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    /* ============================================
+       ACTIVE NAV LINK ON SCROLL
+    ============================================ */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const observerNav = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-50% 0px -50% 0px' });
+
+    sections.forEach(s => observerNav.observe(s));
+
+    /* ============================================
+       THEME TOGGLE
+    ============================================ */
+    const themeBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    let isDark = true;
+
+    themeBtn.addEventListener('click', () => {
+      isDark = !isDark;
+      html.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      themeBtn.innerHTML = isDark
+        ? '<i data-lucide="moon" width="16" height="16"></i>'
+        : '<i data-lucide="sun" width="16" height="16"></i>';
+      lucide.createIcons();
+    });
+
+    /* ============================================
+       LANGUAGE TOGGLE
+    ============================================ */
+    const langBtn = document.getElementById('lang-toggle');
+    let lang = 'fr';
+
+    langBtn.addEventListener('click', () => {
+      lang = lang === 'fr' ? 'en' : 'fr';
+      html.setAttribute('data-lang', lang);
+      langBtn.textContent = lang.toUpperCase();
+    });
+
+    /* ============================================
+       MOBILE MENU
+    ============================================ */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileClose = document.getElementById('mobile-close');
+
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+    }
+
+    /* ============================================
+       SCROLL REVEAL ANIMATIONS
+    ============================================ */
+    const revealElements = document.querySelectorAll('.reveal');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+    timelineItems.forEach(el => revealObserver.observe(el));
+
+    /* ============================================
+       SKILL BAR ANIMATIONS
+    ============================================ */
+    const skillFills = document.querySelectorAll('.skill-fill');
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    skillFills.forEach(fill => skillObserver.observe(fill));
+
+    /* ============================================
+       PORTFOLIO TABS
+    ============================================ */
+    function switchTab(tab) {
+      // Update buttons
+      document.querySelectorAll('.portfolio-tab').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Update panels
+      document.querySelectorAll('.portfolio-panel').forEach(panel => panel.classList.remove('active'));
+      document.getElementById('panel-' + tab).classList.add('active');
+    }
+
+    /* ============================================
+       COUNTER ANIMATION (achievements)
+    ============================================ */
+    function animateCounters() {
+      document.querySelectorAll('.achievement-number').forEach(el => {
+        const text = el.textContent;
+        const num = parseFloat(text);
+        if (isNaN(num)) return;
+
+        const suffix = text.replace(num.toString(), '');
+        let start = 0;
+        const duration = 1500;
+        const step = (timestamp) => {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
+          el.textContent = Math.floor(eased * num) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+        counterObserver.disconnect();
+      }
+    }, { threshold: 0.3 });
+
+    const achievementsSection = document.getElementById('achievements');
+    if (achievementsSection) counterObserver.observe(achievementsSection);
+
+    /* ============================================
+       CONTACT FORM HANDLER
+    ============================================ */
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const origHTML = btn.innerHTML;
+      btn.innerHTML = '<i data-lucide="check" width="18" height="18"></i> Envoyé !';
+      btn.style.background = 'linear-gradient(135deg, #10b981, #34d399)';
+      lucide.createIcons();
+      setTimeout(() => {
+        btn.innerHTML = origHTML;
+        btn.style.background = '';
+        lucide.createIcons();
+        e.target.reset();
+      }, 3000);
+    }
+
+    /* ============================================
+       DATA PARTICLES (hero bg detail)
+    ============================================ */
+    (function createParticles() {
+      const hero = document.getElementById('hero');
+      for (let i = 0; i < 12; i++) {
+        const p = document.createElement('div');
+        p.style.cssText = `
+          position: absolute;
+          width: ${Math.random() * 4 + 2}px;
+          height: ${Math.random() * 4 + 2}px;
+          border-radius: 50%;
+          background: rgba(124, 58, 237, ${Math.random() * 0.4 + 0.1});
+          left: ${Math.random() * 100}%;
+          top: ${Math.random() * 100}%;
+          pointer-events: none;
+          animation: particleFloat ${Math.random() * 10 + 8}s ease-in-out infinite;
+          animation-delay: ${Math.random() * -10}s;
+        `;
+        hero.querySelector('.hero-bg').appendChild(p);
+      }
+    })();
+
+    // Add particle animation keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes particleFloat {
+        0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+        33% { transform: translateY(-30px) translateX(20px); opacity: 0.8; }
+        66% { transform: translateY(-10px) translateX(-15px); opacity: 0.5; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Re-initialize Lucide after dynamic content
+    lucide.createIcons();
+  </script>
+</body>
+</html>
